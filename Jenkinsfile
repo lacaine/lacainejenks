@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage('1-clone'){
             steps{
+             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-id', url: 'https://github.com/lacaine/lacainejenks.git']])  
             }
         }
         stage('2-systemscheck'){
